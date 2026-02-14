@@ -211,7 +211,7 @@ export function useOnboarding({ basePath = "" }: UseOnboardingOptions = {}) {
   }, [stepDefinitions]);
 
   useEffect(() => {
-    const workspaceId = getSessionState().workspaceId;
+    const workspaceId = getSessionState().workspaceId ?? null;
     setContactFormAcknowledged(readContactFormAck(workspaceId));
   }, []);
 
