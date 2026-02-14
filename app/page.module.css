@@ -1,0 +1,79 @@
+/* ═══════════════════════════════════════════════════════════
+   page.module.css — CareOps Landing Page Variant Effects
+   Five unique design systems: Strata · Ripple · Mosaic · Meridian · Terrazzo
+   Color palette: #00AA6C · #FFD500 · #1A1A1A · #F4F6F8 · #2563EB
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────
+   STRATA — Geological cross-section formations
+   ───────────────────────────────────────────────────────── */
+.strataTopBand {
+  position: relative;
+  overflow: hidden;
+}
+.strataTopBand::after {
+  content: "";
+  position: absolute;
+  bottom: -36px;
+  left: -6%;
+  right: -6%;
+  height: 72px;
+  background: #F4F6F8;
+  transform: skewY(-1.8deg);
+  z-index: 1;
+}
+
+@keyframes strataPulse {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.22; }
+}
+.strataVein {
+  position: absolute;
+  bottom: 14%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FFD500, #FFD50066, transparent);
+  animation: strataPulse 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.strataFeature {
+  position: relative;
+  padding-left: 1.75rem;
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.strataFeature::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 4px;
+  border-radius: 2px;
+}
+.strataFeature:hover {
+  transform: translateX(6px);
+}
+
+.strataFault {
+  height: 3px;
+  background: linear-gradient(90deg, #00AA6C 0%, #FFD500 35%, #2563EB 70%, transparent 100%);
+  transform: skewY(-0.8deg);
+}
+
+.strataBedrock {
+  position: relative;
+}
+.strataBedrock::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -6%;
+  right: -6%;
+  height: 60px;
+  background: #1A1A1A;
+  transform: skewY(1.2deg);
+  z-index: 0;
+}
+
